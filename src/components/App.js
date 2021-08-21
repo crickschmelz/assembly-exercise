@@ -16,7 +16,7 @@ const App = () => {
 
   // API call to fetch Reddit images
   const getImages = () => {
-		return fetch(`http://www.reddit.com/r/pics/.json?jsonp=`)
+		return fetch(`https://www.reddit.com/r/pics/.json?jsonp=`)
 			.then((response) => response.json())
 			.then((data) => {
 				setImages(data.data.children);
