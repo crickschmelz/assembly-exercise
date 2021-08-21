@@ -6,6 +6,10 @@ The basis of this project was for a coding exercise. This app will allow the use
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses React and styled components. Jest was added for eventual testing.
 
+## Hosting/Deployment
+
+Please [click here](https://assembly-exercise.herokuapp.com/) to go to the app directly.
+
 ## Available Scripts
 
 In the project directory, you can run:
