@@ -36,7 +36,8 @@ const App = () => {
 		))
 	}, [input, images])
 
-  // sets a new user input with each new character typed, can be expensive with longer queries
+  // sets a new user input with each new character typed
+  // this is how you can filter the image list by title (or by whatever the user would like to search for)
   const filterImages = (e) => {
 		setInput(e.target.value);
 	}

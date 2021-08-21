@@ -1,5 +1,6 @@
 import React from "react";
-import { Thumb, Image, Title } from "../styles/ImageThumbStyles";
+import PropTypes from "prop-types";
+import { Thumb, Title } from "../styles/ImageThumbStyles";
 
 const ImageThumb = ({ image, openModal }) => {
   const { url, title } = image.data;
@@ -9,6 +10,11 @@ const ImageThumb = ({ image, openModal }) => {
       <Title>{title}</Title>
     </Thumb>
   )
+}
+
+ImageThumb.propTypes = {
+  image: PropTypes.object,
+  openModal: PropTypes.func
 }
 
 export default ImageThumb;

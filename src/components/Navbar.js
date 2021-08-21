@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Topbar, Form, Search, Logo } from "../styles/NavbarStyles";
-import logo from "../images/logo.svg"
 import search from "../images/search.svg"
 import reddit from "../images/reddit.svg"
 import reddit2 from "../images/reddit-2.svg"
@@ -24,6 +24,11 @@ const Navbar = ({ filterImages, input }) => {
       </Form>
     </Topbar>
   )
+}
+
+Navbar.propTypes = {
+  filterImages: PropTypes.func,
+  input: PropTypes.string
 }
 
 export default Navbar;

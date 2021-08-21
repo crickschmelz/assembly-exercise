@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
+import PropTypes from "prop-types";
 import { ModalContainer, Modal, TitleContainer, BodyContainer, DetailsContainer } from "../styles/ImageModalStyles";
 import exit from "../images/exit.svg";
 
@@ -8,19 +9,20 @@ const ImageModal = ({ image, closeModal }) => {
 
   // if node is falsy, or if it contains the target element, do nothing
   // otherwise, close the modal
-  const handleClickOutside = e => {
+  const handleClickOutside = useCallback((e) => {
     if (!node.current || node.current.contains(e.target)) {
       return;
     }
     closeModal();
-  }
+  }, [closeModal]
+  )
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <ModalContainer>
@@ -39,6 +41,11 @@ const ImageModal = ({ image, closeModal }) => {
       </Modal>
     </ModalContainer>
   )
+}
+
+ImageModal.propTypes = {
+  image: PropTypes.object,
+  closeModal: PropTypes.func
 }
 
 export default ImageModal;
